@@ -13,7 +13,7 @@ if (defined('STDIN') == false) {
 	die('It only work on command-line ');
 }
 
-$baseDir = '/home';
+$baseDir = 'home';
 $htaccessFiles = [];
 
 if ($handle = opendir($baseDir)) {
@@ -33,9 +33,9 @@ $oldDomain = $argv[1];
 $newDomain = $argv[2];
 
 foreach($htaccessFiles as $file){
-	$str=file_get_contents($file);
+	$str=@file_get_contents($file);
 	$str=str_replace("$oldDomain", "$newDomain",$str);
-	file_put_contents($file, $str);
+	@file_put_contents($file, $str);
 }
 
 
