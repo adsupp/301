@@ -13,7 +13,7 @@ if (defined('STDIN') == false) {
 	die('It only work on command-line ');
 }
 
-$baseDir = 'home';
+$baseDir = '/home';
 $htaccessFiles = [];
 
 if ($handle = opendir($baseDir)) {
